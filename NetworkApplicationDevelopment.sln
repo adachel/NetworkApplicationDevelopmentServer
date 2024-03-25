@@ -4,12 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentServer", "NetworkApplicationDevelopmentServer.csproj", "{B1EBFDEC-BFB1-48F7-97F0-32F427DDC706}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF} = {12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}
+		{8412FACD-5B08-42C2-A98D-F30CD364EB15} = {8412FACD-5B08-42C2-A98D-F30CD364EB15}
+		{91A6D988-FB21-4228-887A-85B912301108} = {91A6D988-FB21-4228-887A-85B912301108}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkApplicationDevelopmentClient", "..\Client\NetworkApplicationDevelopmentClient.csproj", "{8412FACD-5B08-42C2-A98D-F30CD364EB15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentClient", "..\Client\NetworkApplicationDevelopmentClient.csproj", "{8412FACD-5B08-42C2-A98D-F30CD364EB15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientMultyIP", "..\ClientMultyIP\ClientMultyIP.csproj", "{91A6D988-FB21-4228-887A-85B912301108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentClientMultyIP", "..\ClientMultyIP\NetworkApplicationDevelopmentClientMultyIP.csproj", "{91A6D988-FB21-4228-887A-85B912301108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerUDP", "..\ServerUDP\ServerUDP.csproj", "{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentServerUDP", "..\ServerUDP\NetworkApplicationDevelopmentServerUDP.csproj", "{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
