@@ -5,16 +5,10 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentServer", "NetworkApplicationDevelopmentServer.csproj", "{B1EBFDEC-BFB1-48F7-97F0-32F427DDC706}"
 	ProjectSection(ProjectDependencies) = postProject
-		{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF} = {12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}
 		{8412FACD-5B08-42C2-A98D-F30CD364EB15} = {8412FACD-5B08-42C2-A98D-F30CD364EB15}
-		{91A6D988-FB21-4228-887A-85B912301108} = {91A6D988-FB21-4228-887A-85B912301108}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentClient", "..\Client\NetworkApplicationDevelopmentClient.csproj", "{8412FACD-5B08-42C2-A98D-F30CD364EB15}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentClientMultyIP", "..\ClientMultyIP\NetworkApplicationDevelopmentClientMultyIP.csproj", "{91A6D988-FB21-4228-887A-85B912301108}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkApplicationDevelopmentServerUDP", "..\ServerUDP\NetworkApplicationDevelopmentServerUDP.csproj", "{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,14 +24,6 @@ Global
 		{8412FACD-5B08-42C2-A98D-F30CD364EB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8412FACD-5B08-42C2-A98D-F30CD364EB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8412FACD-5B08-42C2-A98D-F30CD364EB15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91A6D988-FB21-4228-887A-85B912301108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91A6D988-FB21-4228-887A-85B912301108}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91A6D988-FB21-4228-887A-85B912301108}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91A6D988-FB21-4228-887A-85B912301108}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12F7B0C9-EAF9-41FA-9756-54D4FBD03DAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
