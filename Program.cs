@@ -1,4 +1,5 @@
 ﻿using NetworkApplicationDevelopment.Lections.Lection1;
+using NetworkApplicationDevelopmentServer.HomeWorks.HomeWork1;
 using NetworkApplicationDevelopmentServer.Seminars.Seminar1;
 
 namespace NetworkApplicationDevelopment
@@ -15,8 +16,15 @@ namespace NetworkApplicationDevelopment
             //////////////////////////////////////////////////////////////////////////////////////////////////
             /// Seminar1
             /// 
-            Sem1 sem1 = new Sem1();
-            sem1.Run();
+            //Sem1 sem1 = new Sem1();
+            //sem1.Run();
+
+            /////////////////////////////////////////////////////////////////////////////////////
+            /// HomeWork 1
+            /// 
+            int port = 12345;
+            ServerHW1 server = new ServerHW1();
+            server.MyServer(port);
         }
     }
 }

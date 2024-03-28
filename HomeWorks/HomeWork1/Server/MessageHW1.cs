@@ -5,9 +5,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace NetworkApplicationDevelopmentServer.Seminars.Seminar1.Task1
+namespace NetworkApplicationDevelopmentServer.HomeWorks.HomeWork1
 {
-    public class Message
+    public class MessageHW1
     {
         public string? Text { get; set; }
         public DateTime? DateTime { get; set; }
@@ -18,7 +18,7 @@ namespace NetworkApplicationDevelopmentServer.Seminars.Seminar1.Task1
                                                                                   // Здесь не статика. потому-что будем
                                                                                   // использовать сами себя(this)
         
-        public static Message? DeserializeFromJson(string message) => JsonSerializer.Deserialize<Message>(message);
+        public static MessageHW1? DeserializeFromJson(string message) => JsonSerializer.Deserialize<MessageHW1>(message);
         // если мы ничего не используем изнутри, то делаем его статическим
 
 

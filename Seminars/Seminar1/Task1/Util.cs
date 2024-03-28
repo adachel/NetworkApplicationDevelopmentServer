@@ -25,8 +25,8 @@ namespace NetworkApplicationDevelopmentServer.Seminars.Seminar1.Task1
 
                 var messageText = Encoding.UTF8.GetString(buffer);
                 
-                Message message = Message.DeserializeFromJson(messageText);
-                message.Print();
+                Message? message = Message.DeserializeFromJson(messageText);
+                message?.Print();
             }
         
         
