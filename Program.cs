@@ -23,15 +23,15 @@ namespace NetworkApplicationDevelopment
             /////////////////////////////////////////////////////////////////////////////////////
             /// HomeWork 1
             /// 
-            //int port = 12345;
-            //ServerHW1 server = new ServerHW1();
-            //server.MyServer(port);
+            int port = 12345;
+            ServerHW1 server = new ServerHW1();
+            server.MyServer(port);
 
             ////////////////////////////////////////////////////////////////////////////////////////////
             /// Лекция 2. Синхронизации: многопоточность, создание и завершение потоков
             /// 
-            Lec2 lec1 = new Lec2();
-            lec1.Run(); 
+            //Lec2 lec1 = new Lec2();
+            //lec1.Run(); 
         }
     }
 }

@@ -45,7 +45,7 @@ namespace NetworkApplicationDevelopmentServer.HomeWorks.HomeWork1
 
                 buffer = Encoding.UTF8.GetBytes("Сервер получил сообщение");
 
-                udpClient.Send(buffer, buffer.Length, iPEndPoint);
+                //udpClient.Send(buffer, buffer.Length, iPEndPoint);
             }
         }
     }

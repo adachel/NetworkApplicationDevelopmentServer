@@ -230,7 +230,7 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
 
 
         // 55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
-        // Синхронизация потоков 
+        // Синхронизация потоков 57:27
 
 
         public void Run()
@@ -389,12 +389,12 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
             //Thread.Sleep(20000);
 
             // свойство 
-            Console.WriteLine("count = " + ThreadPool.CompletedWorkItemCount);
-            ThreadPool.QueueUserWorkItem(ThreadProc, "t1");
-            ThreadPool.QueueUserWorkItem(ThreadProc, "t2");
-            ThreadPool.QueueUserWorkItem(ThreadProc, "t3");
-            Thread.Sleep(20000);
-            Console.WriteLine("count = " + ThreadPool.CompletedWorkItemCount);
+            //Console.WriteLine("count = " + ThreadPool.CompletedWorkItemCount);
+            //ThreadPool.QueueUserWorkItem(ThreadProc, "t1");
+            //ThreadPool.QueueUserWorkItem(ThreadProc, "t2");
+            //ThreadPool.QueueUserWorkItem(ThreadProc, "t3");
+            //Thread.Sleep(20000);
+            //Console.WriteLine("count = " + ThreadPool.CompletedWorkItemCount);
         }
     }
 }
