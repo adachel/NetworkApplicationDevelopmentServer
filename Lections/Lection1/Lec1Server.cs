@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using static System.Collections.Specialized.BitVector32;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Net.WebRequestMethods;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace NetworkApplicationDevelopment.Lections.Lection1
 {
