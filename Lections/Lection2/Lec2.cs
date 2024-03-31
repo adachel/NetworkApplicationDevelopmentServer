@@ -70,7 +70,7 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
         // что мы запускаем с QueueUserWorkItem, а ioTreads - то, что исп dotnet для работы с вводом выводом
         // QueueUserWorkItem<например string> - отвечает, за специфичный механизм помещения в локальный пулл потоков, доступный библиотеки TPL
         // RegisterWaitForSingleObject -    . Чтобы метод заработал нужно создать AutoResetEvent  в сост false (var qqq = new AutoResetEvent(false))
-            // Этот метод позволяет выполнить какой-то метод по достижению определенного промежутка времени (Thread.RegisterWaitForSingleObject(qqq, какой-то метод, 1000 мс, true))
+        // Этот метод позволяет выполнить какой-то метод по достижению определенного промежутка времени (Thread.RegisterWaitForSingleObject(qqq, какой-то метод, 1000 мс, true))
         // SetMaxThreads - мах кол-во потоков
         // SetMinThreads - мin кол-во потоков. Говорим, сколько мин потоков постоянно нужно держать
 
@@ -230,7 +230,58 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
 
 
         // 55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
-        // Синхронизация потоков 57:27
+        // Синхронизация потоков.
+
+        // Примитивы синхронизации – это специальные классы, объекты которых помогают организовать совместный доступ
+        // к чему-либо из разных потоков.
+
+        // Monitor/lock. Инструкция позволяет блокировать доступ к блоку кода, следующим за инструкцией,
+        // для всех потоков, кроме того, который первым выполнит инструкцию.
+
+        // Пусть у нас есть несколько потоков, каждый из которых последовательно выводит в цикле свое имя и числа от 0 до 9.
+        //static object lockObj = new object();
+        //static void ThreadProc() 
+        //{
+        //    lock (lockObj)  // заблокировали доступ к консоли, путем блокирования участка кода, кот пишет в консоль(упорядочили)
+        //    {
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            Console.WriteLine($"{Thread.CurrentThread.Name} : {i}");
+        //        }
+        //    }
+        //}
+
+        //static object lockObj = new object();
+        //static void ThreadProc() // (упорядочили)
+        //{
+        //    bool lockWasTaken = false;
+
+        //    try
+        //    {
+        //        Monitor.Enter(lockObj, ref lockWasTaken); // начинает ждать, до тех пор пока не освободится предыдущая блокировка
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            Console.WriteLine($"{Thread.CurrentThread.Name} : {i}");
+        //        }
+        //    }
+        //    finally 
+        //    {
+        //        if (lockWasTaken) // если блокировка получена
+        //            Monitor.Exit(lockObj);
+        //    }
+        //}
+
+
+        // Mutex. Примитив синхронизации, во многом похожий на lock, но, в отличие от последнего,
+        // может быть применен для синхронизации доступа независимых процессов/приложений.
+
+
+        // AutoResetEvent. С помощью этого примитива синхронизации поток может сигнализировать о наступлении события,
+        // ожидаемого в другом потоке(переход в сигнальное состояние), после чего автоматически с
+        // брасывать объект в состояние ожидания сигнала.
+        static AutoResetEvent ar1 = new AutoResetEvent(false);
+        static AutoResetEvent ar2 = new AutoResetEvent(false);
+
 
 
         public void Run()
@@ -395,6 +446,28 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
             //ThreadPool.QueueUserWorkItem(ThreadProc, "t3");
             //Thread.Sleep(20000);
             //Console.WriteLine("count = " + ThreadPool.CompletedWorkItemCount);
+
+
+            // 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
+            // Синхронизация потоков.
+            // Пусть у нас есть несколько потоков, каждый из которых последовательно выводит в цикле свое имя и числа от 0 до 9.
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    var t = new Thread(ThreadProc);
+            //    t.Name = "Thread - " + i;
+            //    t.Start();
+            //}
+
+            // AutoResetEvent.
+            new Thread(() => {Thread.Sleep(1000); Console.WriteLine("поток 1 завершился"); ar1.Set();}).Start();
+            new Thread(() => {Thread.Sleep(2000); Console.WriteLine("поток 2 завершился"); ar2.Set();}).Start();
+
+            //AutoResetEvent.WaitAll(new AutoResetEvent[] { ar1, ar2 });  // этот метод дождется выполнения обоих потоков
+            //Console.WriteLine("дождались");
+
+
+            AutoResetEvent.WaitAny(new AutoResetEvent[] { ar1, ar2 });  // этот метод дождется любого из потоков
+            Console.WriteLine("дождались");
         }
     }
 }
