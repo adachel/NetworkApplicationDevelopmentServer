@@ -521,6 +521,11 @@ namespace NetworkApplicationDevelopment.Lections.Lection1
                 Console.WriteLine($"Ping replied in {reply.RoundtripTime}");
             }
 
+            // to work
+
+
+
+
         }
 
 
