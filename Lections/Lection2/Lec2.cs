@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace NetworkApplicationDevelopmentServer.Lections.Lection2
@@ -279,8 +281,63 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
         // AutoResetEvent. С помощью этого примитива синхронизации поток может сигнализировать о наступлении события,
         // ожидаемого в другом потоке(переход в сигнальное состояние), после чего автоматически с
         // брасывать объект в состояние ожидания сигнала.
-        static AutoResetEvent ar1 = new AutoResetEvent(false);
-        static AutoResetEvent ar2 = new AutoResetEvent(false);
+        //static AutoResetEvent ar1 = new AutoResetEvent(false);
+        //static AutoResetEvent ar2 = new AutoResetEvent(false);
+
+        // ManualResetEvent. Не переходит в несигнальное состояние автоматически по завершению WaitOne.
+        // Для перехода в несигнальное состояние используется метод Reset.
+
+        //static ManualResetEvent ar1 = new ManualResetEvent(false);
+        //static ManualResetEvent ar2 = new ManualResetEvent(false);
+
+
+        // EventWaitHandle. Примитив синхронизации, наследник абстрактного WaitHandle,
+        // реализующий синхронизацию потоков в стиле Manual & AutoResetEvent, родителем которых он является.
+
+        // WaitHandle. Абстрактный примитив синхронизации, унаследованный такими классами,
+        // как EventWaitHandle, Mutex, Semaphore.
+
+        // Semaphore. Примитив синхронизации, позволяющий одновременную работу заранее определенного числа потоков,
+        // тогда как остальные ждут своей очереди.
+        //static Semaphore semaphore = new Semaphore(2, 5);  // первый аргумент - сколько потоков одновременно. второй арг - макс колво
+        //static void TreadProc(int x)
+        //{
+        //    try
+        //    {
+        //        semaphore.WaitOne();
+        //        for (global::System.Int32 i = 0; i < 10; i++)
+        //        {
+        //            Console.Write(x);
+        //            Thread.Sleep(400);
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        semaphore.Release();
+        //    }
+
+        //}
+
+
+        // Interlocked. 
+        // Атомарная операция – это такая операция, которая производится как одно целое и не может быть выполнена наполовину
+        // или быть прервана в процессе из другого потока.В силу архитектуры ПК
+        // и также современных языков программирования большинство операций не атомарны.
+
+
+        // Concurrent collections.
+        // Пространство имен System.Collection.Generic предоставляет ряд потокобезопасных коллекций,
+        // работать с которыми можно безопасно из нескольких потоков одновременно.При этом блокировка такая,
+        // как, например lock, не требуется – коллекции умеют блокировать потоки только при доступе
+        // к определенным элементам или операциям, выполняемым в данный момент из другого потока.
+        // Примерами таких коллекций являются:
+        // ● ConcurrentDictionary<TKey, TValue> – словарь, позволяющий безопасно работать со своими элементами из разных потоков.
+        // ● BlockingCollection<T> – коллекция позволяет добавлять и читать элементы из разных потоков.
+        // ● ConcurrentQueue<T>, ConcurrentStack<T> – многопоточные версии очереди и стека.
+
+
+
+
 
 
 
@@ -458,16 +515,39 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
             //    t.Start();
             //}
 
-            // AutoResetEvent.
-            new Thread(() => {Thread.Sleep(1000); Console.WriteLine("поток 1 завершился"); ar1.Set();}).Start();
-            new Thread(() => {Thread.Sleep(2000); Console.WriteLine("поток 2 завершился"); ar2.Set();}).Start();
 
-            //AutoResetEvent.WaitAll(new AutoResetEvent[] { ar1, ar2 });  // этот метод дождется выполнения обоих потоков
+            // AutoResetEvent.
+            //new Thread(() => {Thread.Sleep(1000); Console.WriteLine("поток 1 завершился"); ar1.Set();}).Start();
+            //new Thread(() => {Thread.Sleep(2000); Console.WriteLine("поток 2 завершился"); ar2.Set();}).Start();
+
+            ////AutoResetEvent.WaitAll(new AutoResetEvent[] { ar1, ar2 });  // этот метод дождется выполнения обоих потоков
+            ////Console.WriteLine("дождались");
+
+            //AutoResetEvent.WaitAny(new AutoResetEvent[] { ar1, ar2 });  // этот метод дождется любого из потоков
             //Console.WriteLine("дождались");
 
 
-            AutoResetEvent.WaitAny(new AutoResetEvent[] { ar1, ar2 });  // этот метод дождется любого из потоков
-            Console.WriteLine("дождались");
+            // ManualResetEvent.
+            //new Thread(() => { Thread.Sleep(1000); Console.WriteLine("поток 1 завершился"); ar1.Set(); }).Start();
+            //new Thread(() => { Thread.Sleep(2000); Console.WriteLine("поток 2 завершился"); ar2.Set(); }).Start();
+
+            //ManualResetEvent.WaitAll(new ManualResetEvent[] { ar1, ar2 });
+
+            //ar1.Reset();
+            //ar2.Reset();
+            //new Thread(() => { Thread.Sleep(1000); Console.WriteLine("поток 1 завершился"); ar1.Set(); }).Start();
+            //new Thread(() => { Thread.Sleep(2000); Console.WriteLine("поток 2 завершился"); ar2.Set(); }).Start();
+            //ManualResetEvent.WaitAll(new ManualResetEvent[] { ar1, ar2 });
+            //Console.WriteLine("дождались");
+
+
+            // Semaphore.
+
+            for (int i = 0; i < 10; i++) // созд 10 потоков
+            {
+                int x = i; // чтобы небыло захвата переменной i
+                new Thread(() => { TreadProc(x); }).Start(); // одновременно пишут по 2 потока
+            }
         }
     }
 }
