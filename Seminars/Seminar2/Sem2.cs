@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetworkApplicationDevelopmentServer.HomeWorks.HomeWork2
+namespace NetworkApplicationDevelopmentServer.Seminars.Seminar2
 {
-    internal class HW2
+    internal class Sem2
     {
         static async Task<int> Method1()
         {
@@ -27,7 +27,7 @@ namespace NetworkApplicationDevelopmentServer.HomeWorks.HomeWork2
             int count = 0;
             for (int i = 0; i < 5; i++)
             {
-                await Task.Delay(1000); 
+                await Task.Delay(1000);
                 count++;
                 Console.WriteLine("Method2 - " + count);
                 Console.WriteLine($"Method2 Thread: {Thread.CurrentThread.ManagedThreadId}");

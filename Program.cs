@@ -1,9 +1,9 @@
 ﻿using NetworkApplicationDevelopment.Lections.Lection1;
-using NetworkApplicationDevelopmentServer.HomeWorks.HomeWork1;
 using NetworkApplicationDevelopmentServer.HomeWorks.HomeWork2;
 using NetworkApplicationDevelopmentServer.Lections.Lection2;
 using NetworkApplicationDevelopmentServer.Lections.Lection3;
 using NetworkApplicationDevelopmentServer.Seminars.Seminar1;
+using NetworkApplicationDevelopmentServer.Seminars.Seminar2;
 
 namespace NetworkApplicationDevelopment
 {
@@ -26,7 +26,7 @@ namespace NetworkApplicationDevelopment
             /// HomeWork 1
             /// 
             //int port = 12345;
-            //ServerHW1 server = new ServerHW1();
+            //ServerHW2 server = new ServerHW2();
             //server.MyServer(port);
 
             ////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,14 +38,21 @@ namespace NetworkApplicationDevelopment
             /////////////////////////////////////////////////////////////////////////////////////
             /// Семинар 2
             /// 
-            //HW2 hW2 = new HW2();
-            //hW2?.Run();
+            //Sem2 sem2 = new Sem2();
+            //sem2?.Run();
+
+            ////////////////////////////////////////////////////////////////////////////////////
+            /// HomeWork 2
+            /// 
+            ServerHW2 hw2 = new ServerHW2();
+            hw2.RunServer();
+
 
             ////////////////////////////////////////////////////////////////////////////////////////////
             /// Лекция 3.  PLINQ и асинхронность: как работает, области применения
             /// 
-            Lec3 lec3 = new Lec3();
-            lec3.Run();
+            //Lec3 lec3 = new Lec3();
+            //lec3.Run();
         }
 
     }
