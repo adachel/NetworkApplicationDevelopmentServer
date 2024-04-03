@@ -333,7 +333,8 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
         // Примерами таких коллекций являются:
         // ● ConcurrentDictionary<TKey, TValue> – словарь, позволяющий безопасно работать со своими элементами из разных потоков.
         // ● BlockingCollection<T> – коллекция позволяет добавлять и читать элементы из разных потоков.
-        // ● ConcurrentQueue<T>, ConcurrentStack<T> – многопоточные версии очереди и стека.
+        // ● ConcurrentQueue<T>, ConcurrentStack<T> – многопоточные версии очереди и стека.
+
 
 
 
@@ -543,11 +544,11 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection2
 
             // Semaphore.
 
-            for (int i = 0; i < 10; i++) // созд 10 потоков
-            {
-                int x = i; // чтобы небыло захвата переменной i
-                new Thread(() => { TreadProc(x); }).Start(); // одновременно пишут по 2 потока
-            }
+            //for (int i = 0; i < 10; i++) // созд 10 потоков
+            //{
+            //    int x = i; // чтобы небыло захвата переменной i
+            //    new Thread(() => { TreadProc(x); }).Start(); // одновременно пишут по 2 потока
+            //}
         }
     }
 }

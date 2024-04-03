@@ -1,6 +1,8 @@
 ﻿using NetworkApplicationDevelopment.Lections.Lection1;
 using NetworkApplicationDevelopmentServer.HomeWorks.HomeWork1;
+using NetworkApplicationDevelopmentServer.HomeWorks.HomeWork2;
 using NetworkApplicationDevelopmentServer.Lections.Lection2;
+using NetworkApplicationDevelopmentServer.Lections.Lection3;
 using NetworkApplicationDevelopmentServer.Seminars.Seminar1;
 
 namespace NetworkApplicationDevelopment
@@ -30,9 +32,22 @@ namespace NetworkApplicationDevelopment
             ////////////////////////////////////////////////////////////////////////////////////////////
             /// Лекция 2. Синхронизации: многопоточность, создание и завершение потоков
             /// 
-            Lec2 lec1 = new Lec2();
-            lec1.Run();
+            //Lec2 lec1 = new Lec2();
+            //lec1.Run();
+
+            /////////////////////////////////////////////////////////////////////////////////////
+            /// Семинар 2
+            /// 
+            //HW2 hW2 = new HW2();
+            //hW2?.Run();
+
+            ////////////////////////////////////////////////////////////////////////////////////////////
+            /// Лекция 3.  PLINQ и асинхронность: как работает, области применения
+            /// 
+            Lec3 lec3 = new Lec3();
+            lec3.Run();
         }
+
     }
 }
 
