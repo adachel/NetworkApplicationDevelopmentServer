@@ -2,6 +2,7 @@
 using NetworkApplicationDevelopmentServer.HomeWorks.HomeWork2;
 using NetworkApplicationDevelopmentServer.Lections.Lection2;
 using NetworkApplicationDevelopmentServer.Lections.Lection3;
+using NetworkApplicationDevelopmentServer.Lections.Lection4;
 using NetworkApplicationDevelopmentServer.Seminars.Seminar1;
 using NetworkApplicationDevelopmentServer.Seminars.Seminar2;
 
@@ -44,8 +45,8 @@ namespace NetworkApplicationDevelopment
             ////////////////////////////////////////////////////////////////////////////////////
             /// HomeWork 2
             /// 
-            ServerHW2 hw2 = new ServerHW2();
-            hw2.RunServer();
+            //ServerHW2 hw2 = new ServerHW2();
+            //hw2.RunServer();
 
 
             ////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,6 +54,12 @@ namespace NetworkApplicationDevelopment
             /// 
             //Lec3 lec3 = new Lec3();
             //lec3.Run();
+
+            ////////////////////////////////////////////////////////////////////////////////////////////
+            /// Лекция 4. GOF: паттерны проектирования в .Net разработке
+            /// 
+            Lec4 lec4 = new Lec4();
+            lec4.Run();
         }
 
     }
