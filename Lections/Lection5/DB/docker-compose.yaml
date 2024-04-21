@@ -11,8 +11,8 @@ volumes:
 
 services:
   postgres:
-    container_name: postgres_container
-    image: postgres:13.3
+    #container_name: postgres_container
+    #image: postgres:13.3
     environment:
       POSTGRES_DB: "Lec5"
       POSTGRES_USER: "lec5"
