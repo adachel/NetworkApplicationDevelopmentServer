@@ -11,6 +11,7 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection5.DB.Model
     {
         public TestDbContext(DbContextOptions options) : base(options)
         {
+            Database.EnsureCreated();
             this.ChangeTracker.LazyLoadingEnabled = true; // конструктор нужен для вкл этого параметра
         }
 

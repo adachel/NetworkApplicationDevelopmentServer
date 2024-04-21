@@ -13,7 +13,7 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection5
         public void Run()
         {
             var optionsBuilder = new DbContextOptionsBuilder<TestDbContext>() // подготавливаем объект options из TestDbContext
-                .UseNpgsql("Host=localhost;Username=lec5;Password=Lec1234;Database=Lec5_1")
+                .UseNpgsql("Host=localhost;Username=lec5;Password=Lec1234;Database=lecOk")
                 .UseLazyLoadingProxies();
 
             //using (var ctx = new TestDbContext(optionsBuilder.Options)) // замена существующего имени
@@ -44,11 +44,11 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection5
                 //    Console.WriteLine($"Имя {user.Name}");
                 //    Console.WriteLine("_______________Сообщения: ");
 
-                //    //var messages = user.Messages;   // для каждого юзера получаем его сообщение
-                //    //foreach (var message in messages)
-                //    //{
-                //    //    Console.WriteLine($"__________: {message.MessageContent}");
-                //    //}
+                //    var messages = user.Messages;   // для каждого юзера получаем его сообщение
+                //    foreach (var message in messages)
+                //    {
+                //        Console.WriteLine($"__________: {message.MessageContent}");
+                //    }
                 //}
             }
         }

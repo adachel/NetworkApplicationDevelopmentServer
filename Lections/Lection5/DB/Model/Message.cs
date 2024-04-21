@@ -19,10 +19,8 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection5.DB.Model
         [Column("message")]
         public string MessageContent { get; set; }
 
-        [Column("user_id")]
-        public int UserId { get; set; }
 
-        [ForeignKey("UserId")]  // внешний ключ на таблицу User
+        [ForeignKey("user_id")]  // внешний ключ на таблицу User
         public virtual User User { get; set; } // virtual нужен 
     }
 }

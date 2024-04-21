@@ -8,20 +8,14 @@ using System.Threading.Tasks;
 
 namespace NetworkApplicationDevelopmentServer.Lections.Lection5.DB.Model
 {
-    [Table("Users")]
+    [Table("users")]
     public partial class User // partial нужен
     {
-        [Key, Column("Id")]
+        [Key, Column("id")]
         public int Id { get; set; }
 
-        [Column("Name")]
+        [Column("name")]
         public string Name { get; set; }
-
-        [Column("Password")]
-        public string Password { get; set; }
-
-        [Column("Email")]
-        public string Email { get; set; }
 
         public virtual ICollection<Message> Messages { get; set; } // навигация из User к Message, нужны partial и virtual.
                                                                    // ICollection - при отношении одного ко многим,
