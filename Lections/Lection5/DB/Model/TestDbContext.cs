@@ -11,7 +11,7 @@ namespace NetworkApplicationDevelopmentServer.Lections.Lection5.DB.Model
     {
         public TestDbContext(DbContextOptions options) : base(options)
         {
-            this.ChangeTracker.LazyLoadingEnabled = true; // конструктор нужен, чтобы задать эттот параметр
+            this.ChangeTracker.LazyLoadingEnabled = true; // ленивая загрузка данных при обращении к полям
         }
 
         public DbSet<User> Users { get; set; }
