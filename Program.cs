@@ -4,6 +4,8 @@ using NetworkApplicationDevelopmentServer.Lections.Lection2;
 using NetworkApplicationDevelopmentServer.Lections.Lection3;
 using NetworkApplicationDevelopmentServer.Lections.Lection4;
 using NetworkApplicationDevelopmentServer.Lections.Lection5;
+using NetworkApplicationDevelopmentServer.Lections.Lection6;
+using NetworkApplicationDevelopmentServer.Lections.Lection7;
 using NetworkApplicationDevelopmentServer.Seminars.Seminar1;
 using NetworkApplicationDevelopmentServer.Seminars.Seminar2;
 
@@ -66,8 +68,22 @@ namespace NetworkApplicationDevelopment
             ///////////////////////////////////////////////////////////////////////////////////////////
             /// Лекция 5. Базы данных: Entity framework, code first/db first
             /// 
-            Lec5 lec5 = new Lec5();
-            lec5.Run();
+            //Lec5 lec5 = new Lec5();
+            //lec5.Run();
+
+
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            /// Лекция 6. Тестирование приложений: test driven development
+            /// 
+            //Lec6 lec6 = new Lec6();
+            //lec6.Run();
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////
+            /// Лекция 7. Nuget и разработка собственных библиотек
+            /// 
+            Lec7 lec7 = new Lec7();
+            lec7.Run();
         }
 
     }
